@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>110 Pizza and Coffee Bar · Loughborough · Stone-Baked Pizza &amp; Fresh Coffee</title>
+<meta name="description" content="110 Pizza and Coffee Bar — a warm, casual spot in Loughborough for stone-baked pizza and proper coffee. Eat in, takeaway, sit and stay." />
+
+<!-- Build Jr Brief · 110 Pizza and Coffee Bar · 2026-05-12
+     Brand colours from heuristic (coffee keyword): #6F4E37 primary, #FAF3E0 secondary.
+     Tone: warm, casual, friendly.
+     Phone UNVERIFIED — no tel: link rendered. Flagged in handoff.
+     Address UNVERIFIED (TBC) — no street address rendered. Area "Loughborough" shown only.
+     Coordinates from OSM source used for the contact map (52.776189, -1.1990529).
+     No fabricated reviews, menu prices, opening hours, or owner names.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --coffee:       #6F4E37;
+    --coffee-deep:  #4f3725;
+    --coffee-soft:  #8a6a52;
+    --cream:        #FAF3E0;
+    --cream-deep:   #f0e6c8;
+    --ink:          #2a1f17;
+    --paper:        #fffdf6;
+    --line:         rgba(111, 78, 55, 0.18);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 400;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3 {
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    color: var(--coffee-deep);
+  }
+  a { color: var(--coffee); text-decoration: none; }
+  a:hover { color: var(--coffee-deep); }
+  img { max-width: 100%; display: block; }
+
+  .wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 22px;
+  }
+
+  /* ─── NAV ──────────────────────────────────────────── */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255, 253, 246, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 22px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .brand {
+    font-weight: 800; font-size: 1.05rem; color: var(--coffee-deep);
+    letter-spacing: -0.01em;
+  }
+  .brand .dot { color: var(--coffee); }
+  .nav-links { display: none; gap: 26px; }
+  .nav-links a {
+    font-weight: 500; font-size: 0.95rem; color: var(--coffee-deep);
+  }
+  .nav-links a:hover { color: var(--coffee); }
+  @media (min-width: 720px) {
+    .nav-links { display: flex; }
+  }
+
+  /* ─── HERO ─────────────────────────────────────────── */
+  .hero {
+    background:
+      linear-gradient(180deg, rgba(250, 243, 224, 0.55), rgba(250, 243, 224, 0.95)),
+      radial-gradient(1200px 480px at 80% -10%, rgba(111, 78, 55, 0.18), transparent 60%);
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-grid {
+    display: grid;
+    gap: 32px;
+    align-items: center;
+  }
+  @media (min-width: 860px) {
+    .hero-grid { grid-template-columns: 1.1fr 0.9fr; gap: 56px; }
+    .hero { padding: 110px 0 90px; }
+  }
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--coffee);
+    background: rgba(111, 78, 55, 0.08);
+    padding: 6px 12px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(2.1rem, 5.2vw, 3.6rem);
+    margin-bottom: 18px;
+  }
+  .hero .lede {
+    font-size: 1.1rem;
+    color: #4a3a2c;
+    max-width: 46ch;
+    margin-bottom: 28px;
+  }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.98rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-primary {
+    background: var(--coffee);
+    color: var(--cream);
+    box-shadow: 0 4px 14px rgba(111, 78, 55, 0.28);
+  }
+  .btn-primary:hover {
+    background: var(--coffee-deep);
+    color: var(--cream);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(111, 78, 55, 0.32);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--coffee-deep);
+    border: 1.5px solid var(--coffee);
+  }
+  .btn-ghost:hover { background: var(--coffee); color: var(--cream); }
+
+  .hero-card {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 32px;
+    box-shadow: 0 18px 50px -20px rgba(79, 55, 37, 0.28);
+  }
+  .hero-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 14px;
+    color: var(--coffee-deep);
+  }
+  .hero-card ul { list-style: none; }
+  .hero-card li {
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--line);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.98rem;
+  }
+  .hero-card li:last-child { border-bottom: none; }
+  .hero-card li span:last-child {
+    font-weight: 600; color: var(--coffee);
+  }
+
+  /* ─── SECTIONS ─────────────────────────────────────── */
+  section { padding: 72px 0; }
+  section + section { border-top: 1px solid var(--line); }
+  .section-head { max-width: 640px; margin-bottom: 44px; }
+  .section-head .eyebrow { margin-bottom: 14px; }
+  .section-head h2 {
+    font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+    margin-bottom: 14px;
+  }
+  .section-head p {
+    color: #4a3a2c;
+    font-size: 1.05rem;
+  }
+
+  /* ─── ABOUT ────────────────────────────────────────── */
+  .about-grid {
+    display: grid; gap: 28px;
+  }
+  @media (min-width: 760px) {
+    .about-grid { grid-template-columns: 1fr 1fr; gap: 48px; }
+  }
+  .about-grid p { margin-bottom: 14px; color: #3d2e22; }
+  .about-pull {
+    background: var(--cream);
+    border-left: 4px solid var(--coffee);
+    padding: 24px 26px;
+    border-radius: 4px;
+    font-size: 1.05rem;
+    color: var(--coffee-deep);
+    font-weight: 500;
+    line-height: 1.55;
+  }
+
+  /* ─── SERVICES ─────────────────────────────────────── */
+  .services { background: var(--cream); }
+  .service-grid {
+    display: grid; gap: 22px;
+  }
+  @media (min-width: 640px) {
+    .service-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 980px) {
+    .service-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .service-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 28px 26px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .service-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px -12px rgba(79, 55, 37, 0.25);
+  }
+  .service-card .icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    background: rgba(111, 78, 55, 0.12);
+    color: var(--coffee);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; font-weight: 700;
+    margin-bottom: 16px;
+  }
+  .service-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+  }
+  .service-card p {
+    color: #4a3a2c;
+    font-size: 0.97rem;
+  }
+
+  /* ─── GALLERY ─────────────────────────────────────── */
+  .gallery-grid {
+    display: grid; gap: 14px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 700px) {
+    .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (min-width: 980px) {
+    .gallery-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+  .gallery-tile {
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    background:
+      linear-gradient(135deg, var(--cream) 0%, var(--cream-deep) 100%);
+    border: 1px dashed var(--coffee-soft);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--coffee);
+    font-weight: 500;
+    font-size: 0.88rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+
+  /* ─── CONTACT ─────────────────────────────────────── */
+  .contact { background: var(--cream); }
+  .contact-grid {
+    display: grid; gap: 36px;
+  }
+  @media (min-width: 860px) {
+    .contact-grid { grid-template-columns: 1fr 1fr; gap: 48px; }
+  }
+  .contact-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 30px 28px;
+  }
+  .contact-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 18px;
+  }
+  .contact-row {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .contact-row:last-child { border-bottom: none; }
+  .contact-row .label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--coffee);
+    min-width: 90px;
+    padding-top: 3px;
+  }
+  .contact-row .value { color: var(--ink); font-size: 1rem; }
+  .contact-row .value.muted { color: #7a6757; font-style: italic; }
+
+  .map-wrap {
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    aspect-ratio: 4 / 3;
+  }
+  .map-wrap iframe {
+    width: 100%; height: 100%; border: 0; display: block;
+  }
+
+  /* ─── FOOTER ──────────────────────────────────────── */
+  footer {
+    background: var(--coffee-deep);
+    color: var(--cream);
+    padding: 36px 0 28px;
+    text-align: center;
+  }
+  footer .wrap { display: flex; flex-direction: column; gap: 8px; align-items: center; }
+  footer .biz {
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    font-size: 1.05rem;
+  }
+  footer .muted {
+    color: rgba(250, 243, 224, 0.72);
+    font-size: 0.88rem;
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─────────────────────────────────────────── -->
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand">110 <span class="dot">·</span> Pizza &amp; Coffee Bar</div>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Menu</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Visit</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ─── HERO (HOME) ─────────────────────────────────── -->
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Loughborough · Pizza &amp; Coffee</span>
+      <h1>Stone-baked pizza. Properly pulled coffee. Loughborough's warm corner.</h1>
+      <p class="lede">A casual neighbourhood spot for a quick espresso, a slow lunch, or a fresh pizza to take home. Walk in, sit down, stay a while.</p>
+      <div class="cta-row">
+        <a href="#services" class="btn btn-primary">See the menu</a>
+        <a href="#contact" class="btn btn-ghost">Find us</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>What we're about</h3>
+      <ul>
+        <li><span>Pizza</span><span>Stone-baked</span></li>
+        <li><span>Coffee</span><span>Freshly ground</span></li>
+        <li><span>Vibe</span><span>Warm &amp; casual</span></li>
+        <li><span>Where</span><span>Loughborough</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ───────────────────────────────────────── -->
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">About</span>
+      <h2>Two things, done well.</h2>
+      <p>110 Pizza and Coffee Bar is a small, independent spot in Loughborough. We do two things: pizza and coffee. And we try to do both of them properly.</p>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p>The idea is simple. A coffee bar where the espresso is pulled fresh and the milk is steamed right. A pizza counter where the dough is rested, the base is thin, and the toppings aren't piled on for show.</p>
+        <p>We're built for the everyday — the morning flat white before work, the long lunch with a friend, the takeaway pizza on a Friday night. No fuss, no theatre, just a warm room and food we'd want to eat ourselves.</p>
+      </div>
+      <div>
+        <div class="about-pull">
+          A neighbourhood place. Casual. Friendly. Open to anyone who fancies a slice and a coffee — together or one without the other.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVICES (MENU) ─────────────────────────────── -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What we offer</span>
+      <h2>Pizza, coffee, and a place to sit.</h2>
+      <p>A focused offer rather than a long menu. Here's what you can expect when you come in.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="icon">P</div>
+        <h3>Stone-baked pizza</h3>
+        <p>Hand-stretched bases, classic and modern toppings, baked fresh to order. Eat in or take away.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">C</div>
+        <h3>Specialty coffee</h3>
+        <p>Espresso, flat whites, lattes, cappuccinos — pulled properly with freshly ground beans and steamed milk.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">B</div>
+        <h3>Breakfast &amp; brunch</h3>
+        <p>A morning bite to go with your coffee — pastries, toast, and weekend brunch when the timing's right.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">T</div>
+        <h3>Takeaway</h3>
+        <p>Boxed pizza and coffee to-go. Call ahead, pop in, take it home. Quick turnaround at the counter.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">E</div>
+        <h3>Eat-in seating</h3>
+        <p>A warm room to sit and stay. Catch up with a friend, work for an hour, or just enjoy the food in peace.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">L</div>
+        <h3>Local &amp; independent</h3>
+        <p>A small Loughborough business. We know our regulars by name and we'd love to know yours too.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── GALLERY ─────────────────────────────────────── -->
+<section id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Gallery</span>
+      <h2>A look inside.</h2>
+      <p>Photos coming soon. Pop in and you'll see for yourself — or check back here once we've snapped a few.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-tile">Photo soon</div>
+      <div class="gallery-tile">Photo soon</div>
+      <div class="gallery-tile">Photo soon</div>
+      <div class="gallery-tile">Photo soon</div>
+      <div class="gallery-tile">Photo soon</div>
+      <div class="gallery-tile">Photo soon</div>
+      <div class="gallery-tile">Photo soon</div>
+      <div class="gallery-tile">Photo soon</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─────────────────────────────────────── -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Visit</span>
+      <h2>Find us in Loughborough.</h2>
+      <p>We're a Loughborough spot. Drop in when you're passing — full address and direct line are being confirmed and will appear here shortly.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Where &amp; how</h3>
+        <div class="contact-row">
+          <span class="label">Area</span>
+          <span class="value">Loughborough, Leicestershire</span>
+        </div>
+        <div class="contact-row">
+          <span class="label">Address</span>
+          <span class="value muted">To be confirmed</span>
+        </div>
+        <div class="contact-row">
+          <span class="label">Phone</span>
+          <span class="value muted">To be confirmed</span>
+        </div>
+        <div class="contact-row">
+          <span class="label">Hours</span>
+          <span class="value muted">To be confirmed</span>
+        </div>
+      </div>
+      <div class="map-wrap">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-1.2090529%2C52.770189%2C-1.1890529%2C52.782189&amp;layer=mapnik&amp;marker=52.776189%2C-1.1990529"
+          title="Map of 110 Pizza and Coffee Bar, Loughborough"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ──────────────────────────────────────── -->
+<footer>
+  <div class="wrap">
+    <div class="biz">110 Pizza and Coffee Bar</div>
+    <div class="muted">Loughborough · Stone-baked pizza &amp; freshly pulled coffee</div>
+    <div class="muted">© 2026 · A local independent spot</div>
+  </div>
+</footer>
+
+</body>
+</html>
