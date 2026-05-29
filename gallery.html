@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallery — 110 Pizza and Coffee Bar, Loughborough</title>
+<meta name="description" content="Photos from the kitchen and the counter at 110 Pizza and Coffee Bar, Clarence Street, Loughborough.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;500;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAF3E0;--clay:#E7D2BD;--terracotta:#D08760;--ember:#8E3B22;--coffee:#6F4E37;--char:#2D1A11;
+  --display:"Yanone Kaffeesatz",Impact,sans-serif;--body:"Lora",Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--paper);color:var(--char);line-height:1.55;font-size:clamp(1rem,.7rem + .6vw,1.125rem);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .18  0 0 0 0 .1  0 0 0 0 .07  0 0 0 .35 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");opacity:.06;mix-blend-mode:multiply}
+h1,h2,h3,h4{font-family:var(--display);font-weight:500;line-height:.95;letter-spacing:-.01em;text-wrap:balance}
+p{text-wrap:pretty;hyphens:auto;max-width:62ch}
+a{color:inherit;text-decoration:none}
+
+.nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:1.1rem clamp(1.2rem,4vw,3rem);background:rgba(250,243,224,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(111,78,55,.18)}
+.nav__brand{font-family:var(--display);font-weight:700;font-size:1.6rem;letter-spacing:.04em;color:var(--ember)}
+.nav__links{display:flex;gap:clamp(.9rem,2.5vw,2rem);font-family:var(--display);font-weight:500;font-size:1.15rem;letter-spacing:.06em;text-transform:uppercase}
+.nav__links a{position:relative;color:var(--coffee);padding-bottom:2px;transition:color .2s}
+.nav__links a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:var(--ember);transform:scaleX(0);transform-origin:right;transition:transform .3s}
+.nav__links a:hover{color:var(--ember)}
+.nav__links a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav__links a[aria-current]{color:var(--ember)}
+.nav__links a[aria-current]::after{transform:scaleX(1)}
+.nav__phone{display:none}
+@media(min-width:760px){.nav__phone{display:inline-block;font-family:var(--display);font-size:1.2rem;letter-spacing:.04em;color:var(--ember);font-weight:700}}
+
+.page-hero{padding:clamp(3rem,7vw,6rem) clamp(1.2rem,4vw,3rem) clamp(2rem,4vw,3rem);max-width:1200px;margin:0 auto}
+.page-hero__eyebrow{font-family:var(--display);font-size:1.2rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ember);margin-bottom:1rem}
+.page-hero h1{font-size:clamp(3rem,8vw,7rem);color:var(--char);line-height:.9;letter-spacing:-.02em;margin-bottom:1.5rem}
+.page-hero h1 em{font-family:var(--body);font-weight:400;font-style:italic;color:var(--ember);font-size:.7em}
+.page-hero__lede{font-size:clamp(1.1rem,.9rem + .4vw,1.3rem);color:var(--coffee);font-style:italic;max-width:55ch}
+
+.gallery{padding:clamp(2rem,5vw,4rem) clamp(1.2rem,4vw,3rem) clamp(3rem,6vw,5rem)}
+.gallery__wrap{max-width:1300px;margin:0 auto}
+.gallery__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+@media(min-width:760px){.gallery__grid{grid-template-columns:repeat(3,1fr);gap:1.4rem}}
+.tile{position:relative;aspect-ratio:4/5;background:linear-gradient(135deg, var(--clay) 0%, var(--terracotta) 100%);overflow:hidden;display:flex;align-items:center;justify-content:center;padding:1.5rem}
+.tile--alt{background:linear-gradient(135deg, var(--coffee), var(--char))}
+.tile--alt2{background:linear-gradient(135deg, var(--terracotta), var(--ember))}
+.tile--alt3{background:linear-gradient(135deg, var(--ember), var(--char))}
+.tile--alt4{background:linear-gradient(135deg, var(--paper), var(--clay))}
+.tile--wide{grid-column:span 2;aspect-ratio:auto;min-height:240px}
+@media(min-width:760px){.tile--wide{grid-column:span 2}}
+.tile__caption{font-family:var(--display);text-transform:uppercase;letter-spacing:.12em;font-weight:500;color:var(--paper);text-align:center;font-size:clamp(.95rem,1.5vw,1.2rem);position:absolute;bottom:1rem;left:1rem;right:1rem;text-shadow:0 1px 4px rgba(0,0,0,.3)}
+.tile--alt4 .tile__caption{color:var(--coffee);text-shadow:none}
+.tile__num{font-family:var(--display);font-weight:700;font-size:clamp(5rem,12vw,9rem);line-height:.85;color:var(--paper);opacity:.85;letter-spacing:-.04em}
+.tile--alt4 .tile__num{color:var(--ember);opacity:1}
+.tile__label{font-family:var(--display);font-size:clamp(1.6rem,3vw,2.4rem);color:var(--paper);text-align:center;letter-spacing:.04em;line-height:1.1}
+.tile--alt4 .tile__label{color:var(--char)}
+
+.placeholder-note{margin-top:3rem;padding:1.5rem;background:var(--clay);border-left:4px solid var(--ember);text-align:center;font-family:var(--body);font-style:italic;color:var(--coffee);font-size:1.05rem}
+
+.callout{padding:clamp(3rem,5vw,4rem) clamp(1.2rem,4vw,3rem);background:var(--coffee);color:var(--paper);text-align:center}
+.callout__wrap{max-width:780px;margin:0 auto}
+.callout h2{font-size:clamp(2rem,4vw,3rem);color:var(--paper);margin-bottom:1rem}
+.callout p{color:var(--clay);font-size:1.1rem;margin:0 auto 1.8rem;max-width:48ch}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.6rem;font-family:var(--display);font-weight:500;font-size:1.2rem;letter-spacing:.08em;text-transform:uppercase;background:var(--terracotta);color:var(--char);border:none;cursor:pointer;transition:background .2s,transform .15s}
+.btn:hover{background:var(--paper);transform:translateY(-1px)}
+
+.foot{background:var(--char);color:var(--paper);padding:clamp(2.5rem,5vw,4rem) clamp(1.2rem,4vw,3rem) 2rem}
+.foot__grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:2rem}
+@media(min-width:760px){.foot__grid{grid-template-columns:2fr 1fr 1fr}}
+.foot__mark{font-family:var(--display);font-size:clamp(2.5rem,4vw,3.5rem);color:var(--terracotta);font-weight:700;letter-spacing:.02em;line-height:1}
+.foot__mark span{display:block;font-size:.32em;color:var(--clay);letter-spacing:.16em;font-weight:500;margin-top:.4rem;text-transform:uppercase}
+.foot h4{font-family:var(--display);font-size:1.2rem;letter-spacing:.14em;text-transform:uppercase;color:var(--terracotta);margin-bottom:.8rem}
+.foot p,.foot a{font-family:var(--body);font-size:.98rem;color:var(--clay);line-height:1.7}
+.foot a:hover{color:var(--paper);text-decoration:underline}
+.foot__base{max-width:1200px;margin:2.5rem auto 0;padding-top:1.5rem;border-top:1px solid rgba(231,210,189,.18);display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;font-size:.85rem;color:rgba(231,210,189,.65);font-family:var(--display);letter-spacing:.08em;text-transform:uppercase}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav__brand">110</a>
+  <div class="nav__links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="menu.html">Menu</a>
+    <a href="gallery.html" aria-current="page">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <a href="tel:+441509264908" class="nav__phone">01509 264908</a>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero__eyebrow">Gallery</div>
+  <h1>The kitchen, <em>the counter, the corner.</em></h1>
+  <p class="page-hero__lede">Photos coming soon. Until then, here's the colour and the cadence of an evening at 110 — and a standing invitation to drop in and see for yourself.</p>
+</section>
+
+<section class="gallery">
+  <div class="gallery__wrap">
+    <div class="gallery__grid">
+      <div class="tile">
+        <div class="tile__num">01</div>
+        <div class="tile__caption">The oven</div>
+      </div>
+      <div class="tile tile--alt">
+        <div class="tile__label">Stone-baked<br>at 110</div>
+        <div class="tile__caption">Out of the fire</div>
+      </div>
+      <div class="tile tile--alt2">
+        <div class="tile__num">02</div>
+        <div class="tile__caption">Counter</div>
+      </div>
+      <div class="tile tile--alt4">
+        <div class="tile__num">65</div>
+        <div class="tile__caption">Clarence Street</div>
+      </div>
+      <div class="tile tile--alt3">
+        <div class="tile__label">Open<br>'til 11</div>
+        <div class="tile__caption">Every evening</div>
+      </div>
+      <div class="tile">
+        <div class="tile__num">03</div>
+        <div class="tile__caption">The kitchen</div>
+      </div>
+      <div class="tile tile--wide tile--alt">
+        <div style="text-align:center">
+          <div class="tile__label" style="font-size:clamp(2rem,4vw,3rem)">Photos coming soon —<br>watch this space</div>
+        </div>
+      </div>
+      <div class="tile tile--alt2">
+        <div class="tile__num">04</div>
+        <div class="tile__caption">Halal options</div>
+      </div>
+    </div>
+    <p class="placeholder-note">A working gallery is on its way. In the meantime, the best preview is dinner — phone the kitchen or drop in.</p>
+  </div>
+</section>
+
+<section class="callout">
+  <div class="callout__wrap">
+    <h2>Better seen than scrolled.</h2>
+    <p>Photos will only ever tell half the story. The other half is the smell of the oven at six on a Friday evening. Come and find that one yourself.</p>
+    <a href="contact.html" class="btn">Find us on Clarence Street</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot__grid">
+    <div><div class="foot__mark">110<span>Pizza &amp; Coffee Bar</span></div></div>
+    <div>
+      <h4>Find us</h4>
+      <p>65 Clarence Street<br>Loughborough<br>LE11 1DY</p>
+    </div>
+    <div>
+      <h4>Hours &amp; line</h4>
+      <p><a href="tel:+441509264908">01509 264908</a><br>Open every evening<br>4pm–11pm</p>
+    </div>
+  </div>
+  <div class="foot__base">
+    <span>Loughborough · Leicestershire</span>
+    <span>© 110 Pizza and Coffee Bar</span>
+  </div>
+</footer>
+
+</body>
+</html>

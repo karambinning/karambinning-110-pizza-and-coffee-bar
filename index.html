@@ -1,516 +1,300 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>110 Pizza and Coffee Bar · Loughborough · Stone-Baked Pizza &amp; Fresh Coffee</title>
-<meta name="description" content="110 Pizza and Coffee Bar — a warm, casual spot in Loughborough for stone-baked pizza and proper coffee. Eat in, takeaway, sit and stay." />
-
-<!-- Build Jr Brief · 110 Pizza and Coffee Bar · 2026-05-12
-     Brand colours from heuristic (coffee keyword): #6F4E37 primary, #FAF3E0 secondary.
-     Tone: warm, casual, friendly.
-     Phone UNVERIFIED — no tel: link rendered. Flagged in handoff.
-     Address unverified — no street address rendered. Area "Loughborough" shown only.
-     Coordinates from OSM source used for the contact map (52.776189, -1.1990529).
-     No fabricated reviews, menu prices, opening hours, or owner names.
--->
-
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>110 Pizza and Coffee Bar — Loughborough</title>
+<meta name="description" content="Stone-baked pizza, coffee and halal-friendly bites from 65 Clarence Street, Loughborough. Open every evening from 4pm.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;500;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --coffee:       #6F4E37;
-    --coffee-deep:  #4f3725;
-    --coffee-soft:  #8a6a52;
-    --cream:        #FAF3E0;
-    --cream-deep:   #f0e6c8;
-    --ink:          #2a1f17;
-    --paper:        #fffdf6;
-    --line:         rgba(111, 78, 55, 0.18);
-  }
+:root{
+  --paper:#FAF3E0;
+  --clay:#E7D2BD;
+  --terracotta:#D08760;
+  --ember:#8E3B22;
+  --coffee:#6F4E37;
+  --char:#2D1A11;
+  --display:"Yanone Kaffeesatz", Impact, sans-serif;
+  --body:"Lora", Georgia, serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body);
+  background:var(--paper);
+  color:var(--char);
+  line-height:1.55;
+  font-size:clamp(1rem,.7rem + .6vw,1.125rem);
+  overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:1;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .18  0 0 0 0 .1  0 0 0 0 .07  0 0 0 .35 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity:.06;mix-blend-mode:multiply;
+}
+h1,h2,h3,h4{font-family:var(--display);font-weight:500;line-height:.95;letter-spacing:-.01em;text-wrap:balance}
+p{text-wrap:pretty;hyphens:auto;max-width:62ch}
+a{color:inherit;text-decoration:none}
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-weight: 400;
-    color: var(--ink);
-    background: var(--paper);
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  h1, h2, h3 {
-    font-weight: 800;
-    line-height: 1.15;
-    letter-spacing: -0.015em;
-    color: var(--coffee-deep);
-  }
-  a { color: var(--coffee); text-decoration: none; }
-  a:hover { color: var(--coffee-deep); }
-  img { max-width: 100%; display: block; }
+.nav{
+  position:sticky;top:0;z-index:10;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.1rem clamp(1.2rem,4vw,3rem);
+  background:rgba(250,243,224,.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(111,78,55,.18);
+}
+.nav__brand{font-family:var(--display);font-weight:700;font-size:1.6rem;letter-spacing:.04em;color:var(--ember)}
+.nav__links{display:flex;gap:clamp(.9rem,2.5vw,2rem);font-family:var(--display);font-weight:500;font-size:1.15rem;letter-spacing:.06em;text-transform:uppercase}
+.nav__links a{position:relative;color:var(--coffee);padding-bottom:2px;transition:color .2s}
+.nav__links a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:var(--ember);transform:scaleX(0);transform-origin:right;transition:transform .3s}
+.nav__links a:hover{color:var(--ember)}
+.nav__links a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav__links a[aria-current]{color:var(--ember)}
+.nav__links a[aria-current]::after{transform:scaleX(1)}
+.nav__phone{display:none}
+@media(min-width:760px){.nav__phone{display:inline-block;font-family:var(--display);font-size:1.2rem;letter-spacing:.04em;color:var(--ember);font-weight:700}}
 
-  .wrap {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 22px;
-  }
+.hero{
+  position:relative;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:2rem;
+  padding:clamp(2rem,5vw,5rem) clamp(1.2rem,4vw,3rem) clamp(3rem,7vw,6rem);
+  min-height:min(82vh,820px);
+  align-content:center;
+}
+@media(min-width:900px){
+  .hero{grid-template-columns:1.1fr 1fr;align-items:center;gap:clamp(2rem,5vw,5rem)}
+}
+.hero__mark{
+  font-family:var(--display);
+  font-weight:700;
+  font-size:clamp(11rem,28vw,26rem);
+  line-height:.78;
+  letter-spacing:-.04em;
+  background:linear-gradient(180deg, var(--ember) 0%, var(--terracotta) 55%, var(--coffee) 100%);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+  color:var(--ember);
+}
+.hero__mark sub{
+  display:block;
+  font-size:.18em;
+  letter-spacing:.16em;
+  font-weight:500;
+  color:var(--coffee);
+  -webkit-text-fill-color:var(--coffee);
+  margin-top:.4rem;
+  text-transform:uppercase;
+}
+.hero__copy h1{
+  font-size:clamp(2.4rem,5.5vw,4.6rem);
+  color:var(--char);
+  margin-bottom:1.2rem;
+}
+.hero__copy h1 em{font-style:italic;color:var(--ember);font-family:var(--body);font-weight:400;font-size:.85em}
+.hero__copy p{font-size:clamp(1.05rem,.8rem + .6vw,1.3rem);color:var(--coffee);margin-bottom:1.8rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.4rem;font-family:var(--display);font-size:1.1rem;letter-spacing:.06em;text-transform:uppercase;color:var(--char)}
+.hero__meta span{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .9rem;background:var(--clay);border:1px solid rgba(111,78,55,.25)}
+.hero__cta{margin-top:2rem;display:flex;flex-wrap:wrap;gap:1rem}
+.btn{
+  display:inline-flex;align-items:center;gap:.6rem;
+  padding:.95rem 1.6rem;
+  font-family:var(--display);font-weight:500;font-size:1.2rem;letter-spacing:.08em;text-transform:uppercase;
+  background:var(--ember);color:var(--paper);
+  border:none;cursor:pointer;
+  transition:background .2s,transform .15s;
+}
+.btn:hover{background:var(--char);transform:translateY(-1px)}
+.btn--ghost{background:transparent;color:var(--ember);border:1.5px solid var(--ember)}
+.btn--ghost:hover{background:var(--ember);color:var(--paper)}
 
-  /* ─── NAV ──────────────────────────────────────────── */
-  .nav {
-    position: sticky; top: 0; z-index: 50;
-    background: rgba(255, 253, 246, 0.92);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--line);
-  }
-  .nav-inner {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 14px 22px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .brand {
-    font-weight: 800; font-size: 1.05rem; color: var(--coffee-deep);
-    letter-spacing: -0.01em;
-  }
-  .brand .dot { color: var(--coffee); }
-  .nav-links { display: none; gap: 26px; }
-  .nav-links a {
-    font-weight: 500; font-size: 0.95rem; color: var(--coffee-deep);
-  }
-  .nav-links a:hover { color: var(--coffee); }
-  @media (min-width: 720px) {
-    .nav-links { display: flex; }
-  }
+.marquee{
+  overflow:hidden;
+  --speed:38s;
+  background:var(--ember);
+  color:var(--paper);
+  padding:1.1rem 0;
+  border-block:2px solid var(--char);
+}
+.marquee__track{
+  display:inline-flex;gap:3.5rem;white-space:nowrap;
+  font-family:var(--display);font-size:clamp(1.3rem,1rem + 1vw,1.9rem);
+  letter-spacing:.08em;text-transform:uppercase;font-weight:500;
+  animation:scroll var(--speed) linear infinite;
+}
+.marquee__track span::before{content:"●";margin-right:3.5rem;color:var(--clay)}
+@keyframes scroll{to{transform:translateX(-50%)}}
 
-  /* ─── HERO ─────────────────────────────────────────── */
-  .hero {
-    background:
-      linear-gradient(180deg, rgba(250, 243, 224, 0.55), rgba(250, 243, 224, 0.95)),
-      radial-gradient(1200px 480px at 80% -10%, rgba(111, 78, 55, 0.18), transparent 60%);
-    padding: 72px 0 56px;
-    border-bottom: 1px solid var(--line);
-  }
-  .hero-grid {
-    display: grid;
-    gap: 32px;
-    align-items: center;
-  }
-  @media (min-width: 860px) {
-    .hero-grid { grid-template-columns: 1.1fr 0.9fr; gap: 56px; }
-    .hero { padding: 110px 0 90px; }
-  }
-  .eyebrow {
-    display: inline-block;
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--coffee);
-    background: rgba(111, 78, 55, 0.08);
-    padding: 6px 12px;
-    border-radius: 999px;
-    margin-bottom: 18px;
-  }
-  .hero h1 {
-    font-size: clamp(2.1rem, 5.2vw, 3.6rem);
-    margin-bottom: 18px;
-  }
-  .hero .lede {
-    font-size: 1.1rem;
-    color: #4a3a2c;
-    max-width: 46ch;
-    margin-bottom: 28px;
-  }
-  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
-  .btn {
-    display: inline-block;
-    padding: 13px 22px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 0.98rem;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-  }
-  .btn-primary {
-    background: var(--coffee);
-    color: var(--cream);
-    box-shadow: 0 4px 14px rgba(111, 78, 55, 0.28);
-  }
-  .btn-primary:hover {
-    background: var(--coffee-deep);
-    color: var(--cream);
-    transform: translateY(-1px);
-    box-shadow: 0 6px 18px rgba(111, 78, 55, 0.32);
-  }
-  .btn-ghost {
-    background: transparent;
-    color: var(--coffee-deep);
-    border: 1.5px solid var(--coffee);
-  }
-  .btn-ghost:hover { background: var(--coffee); color: var(--cream); }
+.slab{padding:clamp(3rem,7vw,6rem) clamp(1.2rem,4vw,3rem)}
+.slab--clay{background:var(--clay)}
+.slab--coffee{background:var(--coffee);color:var(--paper)}
+.slab--coffee h2,.slab--coffee h3{color:var(--paper)}
+.slab__wrap{max-width:1200px;margin:0 auto}
+.slab__head{margin-bottom:2.5rem}
+.slab__eyebrow{font-family:var(--display);font-size:1.15rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ember);margin-bottom:.6rem}
+.slab--coffee .slab__eyebrow{color:var(--terracotta)}
+.slab__title{font-size:clamp(2.2rem,5vw,4rem);color:var(--char)}
+.slab--coffee .slab__title{color:var(--paper)}
 
-  .hero-card {
-    background: var(--cream);
-    border: 1px solid var(--line);
-    border-radius: 18px;
-    padding: 32px;
-    box-shadow: 0 18px 50px -20px rgba(79, 55, 37, 0.28);
-  }
-  .hero-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 14px;
-    color: var(--coffee-deep);
-  }
-  .hero-card ul { list-style: none; }
-  .hero-card li {
-    padding: 10px 0;
-    border-bottom: 1px dashed var(--line);
-    display: flex; justify-content: space-between; align-items: center;
-    font-size: 0.98rem;
-  }
-  .hero-card li:last-child { border-bottom: none; }
-  .hero-card li span:last-child {
-    font-weight: 600; color: var(--coffee);
-  }
+.what{display:grid;grid-template-columns:1fr;gap:2rem}
+@media(min-width:760px){.what{grid-template-columns:repeat(3,1fr);gap:2.4rem}}
+.what__item{padding:1.5rem 0;border-top:1px solid rgba(111,78,55,.3)}
+.what__item h3{font-size:clamp(1.8rem,3vw,2.5rem);color:var(--ember);margin-bottom:.6rem;letter-spacing:.02em}
+.what__item p{color:var(--char);font-size:1rem}
 
-  /* ─── SECTIONS ─────────────────────────────────────── */
-  section { padding: 72px 0; }
-  section + section { border-top: 1px solid var(--line); }
-  .section-head { max-width: 640px; margin-bottom: 44px; }
-  .section-head .eyebrow { margin-bottom: 14px; }
-  .section-head h2 {
-    font-size: clamp(1.7rem, 3.4vw, 2.4rem);
-    margin-bottom: 14px;
-  }
-  .section-head p {
-    color: #4a3a2c;
-    font-size: 1.05rem;
-  }
+.tonight{display:grid;grid-template-columns:1fr;gap:2.5rem;align-items:start}
+@media(min-width:900px){.tonight{grid-template-columns:1fr 1.2fr;gap:4rem}}
+.tonight__big{
+  font-family:var(--display);
+  font-weight:700;
+  font-size:clamp(6rem,15vw,13rem);
+  line-height:.85;
+  color:var(--terracotta);
+  letter-spacing:-.03em;
+}
+.tonight__big small{display:block;font-size:.22em;font-weight:500;color:var(--paper);letter-spacing:.12em;text-transform:uppercase;margin-top:1rem;opacity:.85}
+.tonight__body p{font-size:clamp(1.1rem,.9rem + .4vw,1.3rem);font-family:var(--body);font-style:italic;color:var(--paper);max-width:46ch;margin-bottom:1.5rem}
+.tonight__hours{font-family:var(--display);font-size:1.4rem;letter-spacing:.06em;color:var(--clay)}
 
-  /* ─── ABOUT ────────────────────────────────────────── */
-  .about-grid {
-    display: grid; gap: 28px;
-  }
-  @media (min-width: 760px) {
-    .about-grid { grid-template-columns: 1fr 1fr; gap: 48px; }
-  }
-  .about-grid p { margin-bottom: 14px; color: #3d2e22; }
-  .about-pull {
-    background: var(--cream);
-    border-left: 4px solid var(--coffee);
-    padding: 24px 26px;
-    border-radius: 4px;
-    font-size: 1.05rem;
-    color: var(--coffee-deep);
-    font-weight: 500;
-    line-height: 1.55;
-  }
+.foot{
+  background:var(--char);color:var(--paper);
+  padding:clamp(2.5rem,5vw,4rem) clamp(1.2rem,4vw,3rem) 2rem;
+}
+.foot__grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:2rem}
+@media(min-width:760px){.foot__grid{grid-template-columns:2fr 1fr 1fr}}
+.foot__mark{font-family:var(--display);font-size:clamp(2.5rem,4vw,3.5rem);color:var(--terracotta);font-weight:700;letter-spacing:.02em;line-height:1}
+.foot__mark span{display:block;font-size:.32em;color:var(--clay);letter-spacing:.16em;font-weight:500;margin-top:.4rem;text-transform:uppercase}
+.foot h4{font-family:var(--display);font-size:1.2rem;letter-spacing:.14em;text-transform:uppercase;color:var(--terracotta);margin-bottom:.8rem}
+.foot p,.foot a{font-family:var(--body);font-size:.98rem;color:var(--clay);line-height:1.7}
+.foot a:hover{color:var(--paper);text-decoration:underline}
+.foot__base{max-width:1200px;margin:2.5rem auto 0;padding-top:1.5rem;border-top:1px solid rgba(231,210,189,.18);display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;font-size:.85rem;color:rgba(231,210,189,.65);font-family:var(--display);letter-spacing:.08em;text-transform:uppercase}
 
-  /* ─── SERVICES ─────────────────────────────────────── */
-  .services { background: var(--cream); }
-  .service-grid {
-    display: grid; gap: 22px;
-  }
-  @media (min-width: 640px) {
-    .service-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (min-width: 980px) {
-    .service-grid { grid-template-columns: repeat(3, 1fr); }
-  }
-  .service-card {
-    background: var(--paper);
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    padding: 28px 26px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .service-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 32px -12px rgba(79, 55, 37, 0.25);
-  }
-  .service-card .icon {
-    width: 44px; height: 44px;
-    border-radius: 10px;
-    background: rgba(111, 78, 55, 0.12);
-    color: var(--coffee);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.3rem; font-weight: 700;
-    margin-bottom: 16px;
-  }
-  .service-card h3 {
-    font-size: 1.15rem;
-    margin-bottom: 8px;
-  }
-  .service-card p {
-    color: #4a3a2c;
-    font-size: 0.97rem;
-  }
-
-  /* ─── GALLERY ─────────────────────────────────────── */
-  .gallery-grid {
-    display: grid; gap: 14px;
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media (min-width: 700px) {
-    .gallery-grid { grid-template-columns: repeat(3, 1fr); }
-  }
-  @media (min-width: 980px) {
-    .gallery-grid { grid-template-columns: repeat(4, 1fr); }
-  }
-  .gallery-tile {
-    aspect-ratio: 1 / 1;
-    border-radius: 12px;
-    background:
-      linear-gradient(135deg, var(--cream) 0%, var(--cream-deep) 100%);
-    border: 1px dashed var(--coffee-soft);
-    display: flex; align-items: center; justify-content: center;
-    color: var(--coffee);
-    font-weight: 500;
-    font-size: 0.88rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    opacity: 0.85;
-  }
-
-  /* ─── CONTACT ─────────────────────────────────────── */
-  .contact { background: var(--cream); }
-  .contact-grid {
-    display: grid; gap: 36px;
-  }
-  @media (min-width: 860px) {
-    .contact-grid { grid-template-columns: 1fr 1fr; gap: 48px; }
-  }
-  .contact-card {
-    background: var(--paper);
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    padding: 30px 28px;
-  }
-  .contact-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 18px;
-  }
-  .contact-row {
-    display: flex; align-items: flex-start; gap: 14px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line);
-  }
-  .contact-row:last-child { border-bottom: none; }
-  .contact-row .label {
-    font-size: 0.78rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--coffee);
-    min-width: 90px;
-    padding-top: 3px;
-  }
-  .contact-row .value { color: var(--ink); font-size: 1rem; }
-  .contact-row .value.muted { color: #7a6757; font-style: italic; }
-
-  .map-wrap {
-    border-radius: 14px;
-    overflow: hidden;
-    border: 1px solid var(--line);
-    background: var(--paper);
-    aspect-ratio: 4 / 3;
-  }
-  .map-wrap iframe {
-    width: 100%; height: 100%; border: 0; display: block;
-  }
-
-  /* ─── FOOTER ──────────────────────────────────────── */
-  footer {
-    background: var(--coffee-deep);
-    color: var(--cream);
-    padding: 36px 0 28px;
-    text-align: center;
-  }
-  footer .wrap { display: flex; flex-direction: column; gap: 8px; align-items: center; }
-  footer .biz {
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    font-size: 1.05rem;
-  }
-  footer .muted {
-    color: rgba(250, 243, 224, 0.72);
-    font-size: 0.88rem;
-  }
+@media(prefers-reduced-motion:reduce){
+  .marquee__track{animation:none}
+}
 </style>
 </head>
 <body>
 
-<!-- ─── NAV ─────────────────────────────────────────── -->
-<header class="nav">
-  <div class="nav-inner">
-    <div class="brand">110 <span class="dot">·</span> Pizza &amp; Coffee Bar</div>
-    <nav class="nav-links">
-      <a href="#about">About</a>
-      <a href="#services">Menu</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Visit</a>
-    </nav>
+<nav class="nav">
+  <a href="index.html" class="nav__brand">110</a>
+  <div class="nav__links">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="about.html">About</a>
+    <a href="menu.html">Menu</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
   </div>
-</header>
+  <a href="tel:+441509264908" class="nav__phone">01509 264908</a>
+</nav>
 
-<!-- ─── HERO (HOME) ─────────────────────────────────── -->
-<section class="hero" id="home">
-  <div class="wrap hero-grid">
+<section class="hero">
+  <div class="hero__mark">110<sub>Clarence Street</sub></div>
+  <div class="hero__copy">
+    <h1>110 Pizza and Coffee Bar — stone-baked pizza, proper coffee, <em>every evening from four.</em></h1>
+    <p>A small family-run pizza and coffee bar on Clarence Street in the heart of Loughborough. Wood-fired bases, halal-friendly toppings, and a kitchen that runs from four 'til eleven, seven nights a week.</p>
+    <div class="hero__meta">
+      <span>Open 4pm–11pm</span>
+      <span>Halal options</span>
+      <span>Stone-baked</span>
+    </div>
+    <div class="hero__cta">
+      <a href="menu.html" class="btn">See the menu</a>
+      <a href="tel:+441509264908" class="btn btn--ghost">01509 264908</a>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Open until eleven</span>
+    <span>Stone-baked from four</span>
+    <span>Halal options daily</span>
+    <span>Sixty-five Clarence Street</span>
+    <span>Family-run kitchen</span>
+    <span>Open until eleven</span>
+    <span>Stone-baked from four</span>
+    <span>Halal options daily</span>
+    <span>Sixty-five Clarence Street</span>
+    <span>Family-run kitchen</span>
+  </div>
+</div>
+
+<section class="slab">
+  <div class="slab__wrap">
+    <div class="slab__head">
+      <div class="slab__eyebrow">What 110 is</div>
+      <h2 class="slab__title">A neighbourhood evening kitchen — small menu, hot oven, no fuss.</h2>
+    </div>
+    <div class="what">
+      <article class="what__item">
+        <h3>Pizza</h3>
+        <p>Thin, crispy, stone-baked bases. Classic margheritas through to fully-loaded specials. Built to order, out in minutes.</p>
+      </article>
+      <article class="what__item">
+        <h3>Chicken &amp; halal</h3>
+        <p>Grilled chicken plates, halal-friendly toppings, sandwiches, sides. Honest food for a hungry walk home from town.</p>
+      </article>
+      <article class="what__item">
+        <h3>Coffee &amp; bites</h3>
+        <p>Coffee bar by name, coffee bar in practice — proper brews alongside garlic bread, sides and a small dessert list.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="slab slab--coffee">
+  <div class="slab__wrap">
+    <div class="slab__head">
+      <div class="slab__eyebrow">Tonight</div>
+      <h2 class="slab__title">Open until eleven.</h2>
+    </div>
+    <div class="tonight">
+      <div class="tonight__big">11<small>'til closing</small></div>
+      <div class="tonight__body">
+        <p>We open at four in the afternoon and we don't lock the door until eleven at night. Same time, every day of the week — there's never a wrong evening to walk in.</p>
+        <p>Find us on the corner of Clarence Street, five minutes from the town centre, ten from campus.</p>
+        <div class="tonight__hours">Mon–Sun · 4pm–11pm</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slab slab--clay">
+  <div class="slab__wrap">
+    <div class="slab__head">
+      <div class="slab__eyebrow">Find us</div>
+      <h2 class="slab__title">65 Clarence Street, LE11 1DY.</h2>
+    </div>
+    <p style="font-size:1.15rem;color:var(--char);max-width:55ch;margin-bottom:2rem">Sit-in, takeaway, or order through the usual delivery apps. Phone the kitchen and we'll have it ready when you walk in.</p>
+    <div class="hero__cta">
+      <a href="contact.html" class="btn">Get directions</a>
+      <a href="tel:+441509264908" class="btn btn--ghost">Call the kitchen</a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot__grid">
     <div>
-      <span class="eyebrow">Loughborough · Pizza &amp; Coffee</span>
-      <h1>110 Pizza and Coffee Bar — stone-baked pizza &amp; properly pulled coffee in Loughborough.</h1>
-      <p class="lede">A warm, casual neighbourhood spot for a quick espresso, a slow lunch, or a fresh pizza to take home. Walk in, sit down, stay a while.</p>
-      <div class="cta-row">
-        <a href="#services" class="btn btn-primary">See the menu</a>
-        <a href="#contact" class="btn btn-ghost">Find us</a>
-      </div>
+      <div class="foot__mark">110<span>Pizza &amp; Coffee Bar</span></div>
     </div>
-    <div class="hero-card">
-      <h3>What we're about</h3>
-      <ul>
-        <li><span>Pizza</span><span>Stone-baked</span></li>
-        <li><span>Coffee</span><span>Freshly ground</span></li>
-        <li><span>Vibe</span><span>Warm &amp; casual</span></li>
-        <li><span>Where</span><span>Loughborough</span></li>
-      </ul>
+    <div>
+      <h4>Find us</h4>
+      <p>65 Clarence Street<br>Loughborough<br>LE11 1DY</p>
+    </div>
+    <div>
+      <h4>Hours &amp; line</h4>
+      <p><a href="tel:+441509264908">01509 264908</a><br>Open every evening<br>4pm–11pm</p>
     </div>
   </div>
-</section>
-
-<!-- ─── ABOUT ───────────────────────────────────────── -->
-<section id="about">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">About</span>
-      <h2>Two things, done well.</h2>
-      <p>110 Pizza and Coffee Bar is a small, independent spot in Loughborough. We do two things: pizza and coffee. And we try to do both of them properly.</p>
-    </div>
-    <div class="about-grid">
-      <div>
-        <p>The idea is simple. A coffee bar where the espresso is pulled fresh and the milk is steamed right. A pizza counter where the dough is rested, the base is thin, and the toppings aren't piled on for show.</p>
-        <p>We're built for the everyday — the morning flat white before work, the long lunch with a friend, the takeaway pizza on a Friday night. No fuss, no theatre, just a warm room and food we'd want to eat ourselves.</p>
-      </div>
-      <div>
-        <div class="about-pull">
-          A neighbourhood place. Casual. Friendly. Open to anyone who fancies a slice and a coffee — together or one without the other.
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── SERVICES (MENU) ─────────────────────────────── -->
-<section class="services" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">What we offer</span>
-      <h2>Pizza, coffee, and a place to sit.</h2>
-      <p>A focused offer rather than a long menu. Here's what you can expect when you come in.</p>
-    </div>
-    <div class="service-grid">
-      <div class="service-card">
-        <div class="icon">P</div>
-        <h3>Stone-baked pizza</h3>
-        <p>Hand-stretched bases, classic and modern toppings, baked fresh to order. Eat in or take away.</p>
-      </div>
-      <div class="service-card">
-        <div class="icon">C</div>
-        <h3>Specialty coffee</h3>
-        <p>Espresso, flat whites, lattes, cappuccinos — pulled properly with freshly ground beans and steamed milk.</p>
-      </div>
-      <div class="service-card">
-        <div class="icon">B</div>
-        <h3>Breakfast &amp; brunch</h3>
-        <p>A morning bite to go with your coffee — pastries, toast, and weekend brunch when the timing's right.</p>
-      </div>
-      <div class="service-card">
-        <div class="icon">T</div>
-        <h3>Takeaway</h3>
-        <p>Boxed pizza and coffee to-go. Call ahead, pop in, take it home. Quick turnaround at the counter.</p>
-      </div>
-      <div class="service-card">
-        <div class="icon">E</div>
-        <h3>Eat-in seating</h3>
-        <p>A warm room to sit and stay. Catch up with a friend, work for an hour, or just enjoy the food in peace.</p>
-      </div>
-      <div class="service-card">
-        <div class="icon">L</div>
-        <h3>Local &amp; independent</h3>
-        <p>A small Loughborough business. We know our regulars by name and we'd love to know yours too.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── GALLERY ─────────────────────────────────────── -->
-<section id="gallery">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Gallery</span>
-      <h2>A look inside.</h2>
-      <p>Photos coming soon. Pop in and you'll see for yourself — or check back here once we've snapped a few.</p>
-    </div>
-    <div class="gallery-grid">
-      <div class="gallery-tile">Photo soon</div>
-      <div class="gallery-tile">Photo soon</div>
-      <div class="gallery-tile">Photo soon</div>
-      <div class="gallery-tile">Photo soon</div>
-      <div class="gallery-tile">Photo soon</div>
-      <div class="gallery-tile">Photo soon</div>
-      <div class="gallery-tile">Photo soon</div>
-      <div class="gallery-tile">Photo soon</div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── CONTACT ─────────────────────────────────────── -->
-<section class="contact" id="contact">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Visit</span>
-      <h2>Find us in Loughborough.</h2>
-      <p>We're a Loughborough spot. Drop in when you're passing — full address and direct line are being confirmed and will appear here shortly.</p>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-card">
-        <h3>Where &amp; how</h3>
-        <div class="contact-row">
-          <span class="label">Area</span>
-          <span class="value">Loughborough, Leicestershire</span>
-        </div>
-        <div class="contact-row">
-          <span class="label">Address</span>
-          <span class="value muted">To be confirmed</span>
-        </div>
-        <div class="contact-row">
-          <span class="label">Phone</span>
-          <span class="value muted">To be confirmed</span>
-        </div>
-        <div class="contact-row">
-          <span class="label">Hours</span>
-          <span class="value muted">To be confirmed</span>
-        </div>
-      </div>
-      <div class="map-wrap">
-        <iframe
-          src="https://www.openstreetmap.org/export/embed.html?bbox=-1.2090529%2C52.770189%2C-1.1890529%2C52.782189&amp;layer=mapnik&amp;marker=52.776189%2C-1.1990529"
-          title="Map of 110 Pizza and Coffee Bar, Loughborough"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── FOOTER ──────────────────────────────────────── -->
-<footer>
-  <div class="wrap">
-    <div class="biz">110 Pizza and Coffee Bar</div>
-    <div class="muted">Loughborough · Stone-baked pizza &amp; freshly pulled coffee</div>
-    <div class="muted">© 2026 · A local independent spot</div>
+  <div class="foot__base">
+    <span>Loughborough · Leicestershire</span>
+    <span>© 110 Pizza and Coffee Bar</span>
   </div>
 </footer>
 

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — 110 Pizza and Coffee Bar, Loughborough</title>
+<meta name="description" content="A family-run pizza and coffee bar on Clarence Street in Loughborough. Stone-baked, halal-friendly, open every evening.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;500;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAF3E0;--clay:#E7D2BD;--terracotta:#D08760;--ember:#8E3B22;--coffee:#6F4E37;--char:#2D1A11;
+  --display:"Yanone Kaffeesatz",Impact,sans-serif;--body:"Lora",Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--paper);color:var(--char);line-height:1.6;font-size:clamp(1rem,.7rem + .6vw,1.125rem);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .18  0 0 0 0 .1  0 0 0 0 .07  0 0 0 .35 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");opacity:.06;mix-blend-mode:multiply}
+h1,h2,h3,h4{font-family:var(--display);font-weight:500;line-height:.95;letter-spacing:-.01em;text-wrap:balance}
+p{text-wrap:pretty;hyphens:auto;max-width:62ch}
+a{color:inherit;text-decoration:none}
+
+.nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:1.1rem clamp(1.2rem,4vw,3rem);background:rgba(250,243,224,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(111,78,55,.18)}
+.nav__brand{font-family:var(--display);font-weight:700;font-size:1.6rem;letter-spacing:.04em;color:var(--ember)}
+.nav__links{display:flex;gap:clamp(.9rem,2.5vw,2rem);font-family:var(--display);font-weight:500;font-size:1.15rem;letter-spacing:.06em;text-transform:uppercase}
+.nav__links a{position:relative;color:var(--coffee);padding-bottom:2px;transition:color .2s}
+.nav__links a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:var(--ember);transform:scaleX(0);transform-origin:right;transition:transform .3s}
+.nav__links a:hover{color:var(--ember)}
+.nav__links a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav__links a[aria-current]{color:var(--ember)}
+.nav__links a[aria-current]::after{transform:scaleX(1)}
+.nav__phone{display:none}
+@media(min-width:760px){.nav__phone{display:inline-block;font-family:var(--display);font-size:1.2rem;letter-spacing:.04em;color:var(--ember);font-weight:700}}
+
+.page-hero{padding:clamp(3rem,7vw,6rem) clamp(1.2rem,4vw,3rem) clamp(2rem,4vw,4rem);max-width:1200px;margin:0 auto}
+.page-hero__eyebrow{font-family:var(--display);font-size:1.2rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ember);margin-bottom:1rem}
+.page-hero h1{font-size:clamp(3rem,8vw,7rem);color:var(--char);line-height:.9;letter-spacing:-.02em;margin-bottom:1.5rem}
+.page-hero h1 em{font-family:var(--body);font-weight:400;font-style:italic;color:var(--ember);font-size:.7em}
+.page-hero__lede{font-size:clamp(1.15rem,.9rem + .5vw,1.4rem);color:var(--coffee);font-style:italic;max-width:55ch}
+
+.story{padding:clamp(3rem,6vw,5rem) clamp(1.2rem,4vw,3rem);background:var(--clay)}
+.story__wrap{max-width:880px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:2rem}
+.story__pull{font-family:var(--display);font-weight:500;font-size:clamp(2rem,4.5vw,3.4rem);line-height:1;color:var(--ember);letter-spacing:-.01em;padding:1.5rem 0;border-block:1px solid rgba(111,78,55,.3)}
+.story p{font-size:1.1rem;color:var(--char);max-width:none}
+.story p + p{margin-top:1.2rem}
+
+.values{padding:clamp(3rem,6vw,5rem) clamp(1.2rem,4vw,3rem);background:var(--coffee);color:var(--paper)}
+.values__wrap{max-width:1200px;margin:0 auto}
+.values__eyebrow{font-family:var(--display);font-size:1.15rem;letter-spacing:.18em;text-transform:uppercase;color:var(--terracotta);margin-bottom:.6rem}
+.values__head{font-size:clamp(2rem,4vw,3.2rem);color:var(--paper);margin-bottom:2.5rem;max-width:18ch}
+.values__list{display:grid;grid-template-columns:1fr;gap:2.5rem}
+@media(min-width:760px){.values__list{grid-template-columns:repeat(2,1fr);gap:3rem}}
+.values__item{display:flex;gap:1.5rem;align-items:flex-start}
+.values__num{font-family:var(--display);font-size:clamp(3rem,5vw,4.5rem);line-height:.85;color:var(--terracotta);font-weight:700;flex-shrink:0}
+.values__txt h3{font-size:1.6rem;color:var(--paper);margin-bottom:.4rem;letter-spacing:.02em}
+.values__txt p{color:var(--clay);font-size:1rem;max-width:38ch}
+
+.place{padding:clamp(3rem,6vw,5rem) clamp(1.2rem,4vw,3rem)}
+.place__wrap{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:2rem;align-items:center}
+@media(min-width:900px){.place__wrap{grid-template-columns:1fr 1fr;gap:4rem}}
+.place__num{font-family:var(--display);font-weight:700;font-size:clamp(8rem,18vw,16rem);line-height:.8;color:var(--terracotta);letter-spacing:-.04em;background:linear-gradient(180deg,var(--ember),var(--terracotta),var(--coffee));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.place__num small{display:block;font-size:.15em;color:var(--coffee);letter-spacing:.16em;font-weight:500;text-transform:uppercase;margin-top:.6rem;-webkit-text-fill-color:var(--coffee)}
+.place__copy h2{font-size:clamp(2rem,4vw,3rem);color:var(--char);margin-bottom:1.2rem}
+.place__copy p{color:var(--coffee);font-size:1.1rem;margin-bottom:1rem}
+.place__btn{margin-top:1.5rem}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.6rem;font-family:var(--display);font-weight:500;font-size:1.2rem;letter-spacing:.08em;text-transform:uppercase;background:var(--ember);color:var(--paper);border:none;cursor:pointer;transition:background .2s,transform .15s}
+.btn:hover{background:var(--char);transform:translateY(-1px)}
+
+.foot{background:var(--char);color:var(--paper);padding:clamp(2.5rem,5vw,4rem) clamp(1.2rem,4vw,3rem) 2rem}
+.foot__grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:2rem}
+@media(min-width:760px){.foot__grid{grid-template-columns:2fr 1fr 1fr}}
+.foot__mark{font-family:var(--display);font-size:clamp(2.5rem,4vw,3.5rem);color:var(--terracotta);font-weight:700;letter-spacing:.02em;line-height:1}
+.foot__mark span{display:block;font-size:.32em;color:var(--clay);letter-spacing:.16em;font-weight:500;margin-top:.4rem;text-transform:uppercase}
+.foot h4{font-family:var(--display);font-size:1.2rem;letter-spacing:.14em;text-transform:uppercase;color:var(--terracotta);margin-bottom:.8rem}
+.foot p,.foot a{font-family:var(--body);font-size:.98rem;color:var(--clay);line-height:1.7}
+.foot a:hover{color:var(--paper);text-decoration:underline}
+.foot__base{max-width:1200px;margin:2.5rem auto 0;padding-top:1.5rem;border-top:1px solid rgba(231,210,189,.18);display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;font-size:.85rem;color:rgba(231,210,189,.65);font-family:var(--display);letter-spacing:.08em;text-transform:uppercase}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav__brand">110</a>
+  <div class="nav__links">
+    <a href="index.html">Home</a>
+    <a href="about.html" aria-current="page">About</a>
+    <a href="menu.html">Menu</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <a href="tel:+441509264908" class="nav__phone">01509 264908</a>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero__eyebrow">About</div>
+  <h1>A family kitchen <em>on Clarence Street.</em></h1>
+  <p class="page-hero__lede">110 has been feeding hungry locals, late workers and students for years now — a small, family-run pizza and coffee bar where the oven stays hot, the menu stays honest, and the door stays open every evening of the week.</p>
+</section>
+
+<section class="story">
+  <div class="story__wrap">
+    <p>You'll find us at number sixty-five Clarence Street, a few minutes' walk from Loughborough's market square. The kitchen runs on a simple promise — wood-fired pizza, made to order, served fresh, no shortcuts.</p>
+    <div class="story__pull">"Best pizza in Loughborough" — and we don't mind the customers saying so.</div>
+    <p>The "coffee bar" half of the name is more than decoration. Alongside the pizza there's proper coffee, hot drinks, garlic bread, grilled chicken, halal-friendly options, and a small list of sides and desserts. Whatever you fancy after the pubs shut, before the gig, or on the way home from work, the lights are on.</p>
+    <p>We're family-run, which means the same people who answer the phone are usually the ones rolling the dough. It's not a chain, it's not a franchise, and we like it that way.</p>
+  </div>
+</section>
+
+<section class="values">
+  <div class="values__wrap">
+    <div class="values__eyebrow">How we run</div>
+    <h2 class="values__head">Four habits that keep the kitchen honest.</h2>
+    <div class="values__list">
+      <div class="values__item">
+        <div class="values__num">01</div>
+        <div class="values__txt">
+          <h3>Stone-baked, every time</h3>
+          <p>The oven does the work. Thin, crispy, slightly charred — the way pizza should taste.</p>
+        </div>
+      </div>
+      <div class="values__item">
+        <div class="values__num">02</div>
+        <div class="values__txt">
+          <h3>Halal-friendly</h3>
+          <p>A menu that works for the whole town, not just half of it. Ask the kitchen and we'll guide you.</p>
+        </div>
+      </div>
+      <div class="values__item">
+        <div class="values__num">03</div>
+        <div class="values__txt">
+          <h3>Open every evening</h3>
+          <p>Four 'til eleven, seven nights a week. No "closed Mondays", no surprise shutters.</p>
+        </div>
+      </div>
+      <div class="values__item">
+        <div class="values__num">04</div>
+        <div class="values__txt">
+          <h3>Made to order</h3>
+          <p>Nothing sat under a heat lamp. You order, we cook, you eat it hot. That's the deal.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="place">
+  <div class="place__wrap">
+    <div class="place__num">65<small>Clarence Street</small></div>
+    <div class="place__copy">
+      <h2>Just past the corner.</h2>
+      <p>Five minutes from the town centre, ten from the university. We're the warm corner with the oven going at the back.</p>
+      <p>Sit-in, takeaway, or call ahead and we'll have it ready when you walk through the door.</p>
+      <div class="place__btn">
+        <a href="contact.html" class="btn">Find us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot__grid">
+    <div><div class="foot__mark">110<span>Pizza &amp; Coffee Bar</span></div></div>
+    <div>
+      <h4>Find us</h4>
+      <p>65 Clarence Street<br>Loughborough<br>LE11 1DY</p>
+    </div>
+    <div>
+      <h4>Hours &amp; line</h4>
+      <p><a href="tel:+441509264908">01509 264908</a><br>Open every evening<br>4pm–11pm</p>
+    </div>
+  </div>
+  <div class="foot__base">
+    <span>Loughborough · Leicestershire</span>
+    <span>© 110 Pizza and Coffee Bar</span>
+  </div>
+</footer>
+
+</body>
+</html>
